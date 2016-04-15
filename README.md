@@ -22,4 +22,4 @@ Click 'Remote' in SourceTree and you will be shown a full list of repositories y
 * Check 'Also create remote repository' and click 'Create'
 * Change owner to 'nationalarchives', uncheck 'This is a private repository' and click 'Create'
 * In SourceTree stage the files and make the first commit
-* 
+* Click on 'Git Flow' to create the desired branches to begin development
