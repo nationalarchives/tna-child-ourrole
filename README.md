@@ -21,4 +21,5 @@ Click 'Remote' in SourceTree and you will be shown a full list of repositories y
 * Browse and select your newly created folder
 * Check 'Also create remote repository' and click 'Create'
 * Change owner to 'nationalarchives', uncheck 'This is a private repository' and click 'Create'
-* In SourceTree's 
+* In SourceTree stage the files and make the first commit
+* 
