@@ -23,3 +23,23 @@ Click 'Remote' in SourceTree and you will be shown a full list of repositories y
 * Change owner to 'nationalarchives', uncheck 'This is a private repository' and click 'Create'
 * In SourceTree stage the files and make the first commit
 * Click on 'Git Flow' to create the desired branches to begin development
+* Push both branches 'master' and 'develop' to the remote repository
+
+### 1.3 Create a new project for the WordPress installation in PhpStorm
+
+* Select 'Create New Project from Existing Files'
+* Select 'Web server is installed locally, source files are located under its document root'
+* Set /Applications/MAMP/htdocs/sites/tna-base-dev/wp-content/themes/tna-child-... and click 'Project Root'
+* Specify parameters for a new server as:
+  * Name: tna-child-...
+  * Web server root URL: http://tna-base:8888
+  * Set Project URL as: http://tna-base:8888
+
+### 1.4 Ignoring NodeJS
+
+* Copy and paste the line of code below into the .gitignore using your preferred text editor:
+
+```
+# NodeJS
+/node_modules/
+```
