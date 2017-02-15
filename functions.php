@@ -31,7 +31,7 @@ add_action('wp_enqueue_scripts', 'tna_child_styles');
 
 function long_form_assets(){
 	if ( is_page_template('tna-long-form.php') ) {
-		wp_register_style('long-form-css', get_stylesheet_directory_uri() . '/css/style.css', array(), '0.1', 'all');
+		wp_register_style('long-form-css', get_stylesheet_directory_uri() . '/css/long-form.css', array(), '0.1', 'all');
 		wp_register_script('long-form-js', get_stylesheet_directory_uri() . '/js/long-form.js', array( 'jquery' ), '1.0',true );
 		wp_enqueue_style('long-form-css');
 		wp_enqueue_script( 'long-form-js' );

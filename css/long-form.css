@@ -55,10 +55,7 @@ nav {
 }
 
 p {
-    margin-top:1.5em;
-    margin-bottom: 0;
-    margin-left: 1.5em;
-    margin-right: 1.5em;
+    margin:1.5em;
 }
 
 /*--------------------
@@ -776,10 +773,11 @@ img.aligncenter {
     width: 100%;
 }
 
-.img-reponsive {
+.img-responsive {
     width: 100%;
 }
 
 .size-large {
     width: 100%;
+    height: auto;
 }

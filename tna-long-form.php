@@ -4,61 +4,65 @@ Template Name: Long form template
 */
 get_header();
 ?>
-	<main>
+    <main>
 		<?php global $post; ?>
 
-		<!--Navigation-->
-		<div id="cd-vertical-nav" role="navigation" class="hidden-xs">
-			<ul id="top-menu">
-				<li>
-					<a href="#<?php echo sanitize_title_with_dashes(get_the_title()); ?>" class="sub-menu">
-						<span class="cd-dot"></span>
-						<span class="cd-label arrow_box">Introduction</span>
-					</a>
-				</li>
+        <!--Navigation-->
+        <div id="cd-vertical-nav" role="navigation" class="hidden-xs">
+            <ul id="top-menu">
+                <li>
+                    <a href="#<?php echo sanitize_title_with_dashes( get_the_title() ); ?>" class="sub-menu">
+                        <span class="cd-dot"></span>
+                        <span class="cd-label arrow_box">Introduction</span>
+                    </a>
+                </li>
 				<?php
-				$args = array(
-					'post_type' => 'post',
-					'posts_per_page' => -1,
-					'orderby' => 'menu_order'
+				$args      = array(
+					'post_parent'    => $post->ID,
+					'post_type'      => 'page',
+					'posts_per_page' => - 1,
+					'orderby'        => 'menu_order'
 				);
-				$the_query = new WP_Query($args);
-				if ($the_query->have_posts()):
-					while ($the_query->have_posts()):
+				$the_query = new WP_Query( $args );
+				if ( $the_query->have_posts() ):
+					while ( $the_query->have_posts() ):
 						$the_query->the_post();
 						?>
-						<li>
-							<a href="#<?php echo sanitize_title_with_dashes(get_the_title()); ?>" class="sub-menu">
-								<span class="cd-dot"></span>
-								<span class="cd-label arrow_box"><?php the_title(); ?></span>
-							</a>
-						</li>
+                        <li>
+                            <a href="#<?php echo sanitize_title_with_dashes( get_the_title() ); ?>" class="sub-menu">
+                                <span class="cd-dot"></span>
+                                <span class="cd-label arrow_box"><?php the_title(); ?></span>
+                            </a>
+                        </li>
 						<?php
 					endwhile;
 				endif;
 				wp_reset_postdata();
 				?>
-			</ul>
-		</div>
-		<!--End Navigation-->
+            </ul>
+        </div>
+        <!--End Navigation-->
 
-		<!--Get page content-->
+        <!--Get page content-->
 		<?php
-		if (have_posts()):
-			while (have_posts()):
+		if ( have_posts() ):
+			while ( have_posts() ):
 				the_post();
 				?>
-				<section class="cd-section" data-section-title="<?php echo sanitize_title_with_dashes(get_the_title()); ?>" id="<?php echo sanitize_title_with_dashes(get_the_title()); ?>">
+                <section class="cd-section"
+                         data-section-title="<?php echo sanitize_title_with_dashes( get_the_title() ); ?>"
+                         id="<?php echo sanitize_title_with_dashes( get_the_title() ); ?>">
 					<?php
-					if (has_post_thumbnail($post->ID)): ?>
-					<?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail');  ?>
-					<figure>
-						<div class="lf-image-bg-fixed-height" style="background-image: url('<?php echo make_path_relative($image[0]); ?>')">
-							<?php get_template_part('breadcrumb'); ?>
-							<div class="bt-archive-social-media">
+					if ( has_post_thumbnail( $post->ID ) ): ?>
+					<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+                    <figure>
+                        <div class="lf-image-bg-fixed-height"
+                             style="background-image: url('<?php echo make_path_relative( $image[0] ); ?>')">
+							<?php get_template_part( 'breadcrumb' ); ?>
+                            <div class="bt-archive-social-media">
 
-								<div id="fb-root"></div>
-								<script>(function (d, s, id) {
+                                <div id="fb-root"></div>
+                                <script>(function (d, s, id) {
                                         var js, fjs = d.getElementsByTagName(s)[0];
                                         if (d.getElementById(id)) return;
                                         js = d.createElement(s);
@@ -66,11 +70,13 @@ get_header();
                                         js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
                                         fjs.parentNode.insertBefore(js, fjs);
                                     }(document, 'script', 'facebook-jssdk'));</script>
-								<div class="fb-share-button" data-href="http://www.nationalarchives.gov.uk/first-world-war/telecommunications-in-war/"
-								     data-layout="button_count" tabindex="0"></div>
+                                <div class="fb-share-button"
+                                     data-href="change to the url of the page here"
+                                     data-layout="button_count" tabindex="0"></div>
 
-								<span tabindex="0">
-                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.nationalarchives.gov.uk/first-world-war/telecommunications-in-war/"
+                                <span tabindex="0">
+                                <a href="https://twitter.com/share" class="twitter-share-button"
+                                   data-url="change to the url of the page here"
                                    data-via="UKNatArchives">Tweet</a>
                            <script>!function (d, s, id) {
                                    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
@@ -83,92 +89,93 @@ get_header();
                                }(document, 'script', 'twitter-wjs');
                            </script>
                         </span>
-							</div>
+                            </div>
 
-							<div class="container-lf">
-								<div class="intro-text">
-									<h1 class="intro-heading"><?php the_title();  ?></h1>
-									<h2><a href="#" class="sr-only sr-only-focusable"><?php the_title(); ?></a></h2>
-								</div>
-							</div>
-						</div>
+                            <div class="container-lf">
+                                <div class="intro-text">
+                                    <h1 class="intro-heading"><?php the_title(); ?></h1>
+                                    <h2><a href="#" class="sr-only sr-only-focusable"><?php the_title(); ?></a></h2>
+                                </div>
+                            </div>
+                        </div>
 						<?php
-						$get_description = get_post(get_post_thumbnail_id())->post_excerpt;
-						if (!empty($get_description))
-						{
+						$get_description = get_post( get_post_thumbnail_id() )->post_excerpt;
+						if ( ! empty( $get_description ) ) {
 							echo '<figcaption class="wp-caption-text">' . $get_description . '</figcaption>';
 						}
 						?>
 						<?php
 						endif;
 						?>
-					</figure>
-					<div class="full-div">
-						<div class="container-lf">
+                    </figure>
+                    <div class="full-div">
+                        <div class="container-lf">
 							<?php
-							$the_content = make_path_relative(apply_filters('the_content', get_the_content()));
+							$the_content = make_path_relative( apply_filters( 'the_content', get_the_content() ) );
 							echo $the_content;
 							?>
-						</div>
-					</div>
-				</section>
+                        </div>
+                    </div>
+                </section>
 				<?php
 			endwhile;
 		else:
 			?>
-			<p>Sorry, this page does not exist</p>
+            <p>Sorry, this page does not exist</p>
 			<?php
 		endif;
 		?>
-		<!--End page content-->
+        <!--End page content-->
 
-		<!--Loop through posts-->
+        <!--Loop through posts-->
 		<?php
 		$args      = array(
-			'post_type' => 'post',
-			'posts_per_page' => -1,
-			'orderby' => 'menu_order'
+			'post_parent'    => $post->ID,
+			'post_type'      => 'page',
+			'posts_per_page' => - 1,
+			'orderby'        => 'menu_order'
 		);
-		$the_query = new WP_Query($args);
-		if ($the_query->have_posts()):
-			while ($the_query->have_posts()):
+		$the_query = new WP_Query( $args );
+		if ( $the_query->have_posts() ):
+			while ( $the_query->have_posts() ):
 				$the_query->the_post();
 				?>
-				<section id="<?php echo sanitize_title_with_dashes(get_the_title()); ?>" class="cd-section" data-section-title="<?php echo sanitize_title_with_dashes(get_the_title()); ?>">
+                <section id="<?php echo sanitize_title_with_dashes( get_the_title() ); ?>" class="cd-section"
+                         data-section-title="<?php echo sanitize_title_with_dashes( get_the_title() ); ?>">
 					<?php
-					$image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail');
-					if (has_post_thumbnail($post->ID)):
+					$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+					if ( has_post_thumbnail( $post->ID ) ):
 					?>
-					<figure class="full-width">
-						<div class="image-bg-fixed-height-2" style="background-image: url(<?php echo make_path_relative($image[0]); ?>);')">
-						</div>
+                    <figure class="full-width">
+                        <div class="image-bg-fixed-height-2"
+                             style="background-image: url(<?php echo make_path_relative( $image[0] ); ?>);')">
+                        </div>
 						<?php endif; ?>
 						<?php
-						$get_description = get_post(get_post_thumbnail_id())->post_excerpt;
-						if (!empty($get_description))
-						{
+						$get_description = get_post( get_post_thumbnail_id() )->post_excerpt;
+						if ( ! empty( $get_description ) ) {
 							echo '<figcaption class="wp-caption-text">' . $get_description . '</figcaption>';
 						}
 						?>
-						<?php if (has_post_thumbnail($post->ID)): ?>
-					</figure>
+						<?php if ( has_post_thumbnail( $post->ID ) ): ?>
+                    </figure>
 				<?php endif; ?>
-					<div class="full-div">
-						<div class="container-lf">
-							<h2><a href="#" class="sr-only sr-only-focusable"><?php the_title(); ?></a></h2>
+                    <div class="full-div">
+                        <div class="container-lf">
+                            <h2><a href="#" class="sr-only sr-only-focusable"><?php the_title(); ?></a></h2>
 							<?php
-							$the_content = make_path_relative(apply_filters('the_content', get_the_content()));
+							$the_content = make_path_relative( apply_filters( 'the_content', get_the_content() ) );
 							echo $the_content;
 							?>
-						</div>
-					</div>
-				</section>
+                        </div>
+                    </div>
+                </section>
 				<?php
 			endwhile;
 		endif;
 		wp_reset_postdata();
 		?>
-		<!--End Loop through posts-->
-	</main>
+        <!--End Loop through posts-->
+    </main>
 
 <?php get_footer(); ?>
