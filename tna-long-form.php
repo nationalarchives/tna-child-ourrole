@@ -11,7 +11,7 @@ get_header();
         <div id="cd-vertical-nav" role="navigation" class="hidden-xs">
             <ul id="top-menu">
                 <li>
-                    <a href="#<?php echo sanitize_title_with_dashes( get_the_title() ); ?>" class="sub-menu">
+                    <a href="#<?php echo sanitize_title_with_dashes( get_the_title() ); ?>" class="sub-menu" tabindex="-1">
                         <span class="cd-dot"></span>
                         <span class="cd-label arrow_box">Introduction</span>
                     </a>
@@ -29,7 +29,7 @@ get_header();
 						$the_query->the_post();
 						?>
                         <li>
-                            <a href="#<?php echo sanitize_title_with_dashes( get_the_title() ); ?>" class="sub-menu">
+                            <a href="#<?php echo sanitize_title_with_dashes( get_the_title() ); ?>" class="sub-menu" tabindex="-1">
                                 <span class="cd-dot"></span>
                                 <span class="cd-label arrow_box"><?php the_title(); ?></span>
                             </a>
@@ -59,8 +59,8 @@ get_header();
                         <div class="lf-image-bg-fixed-height"
                              style="background-image: url('<?php echo make_path_relative( $image[0] ); ?>')">
 							<?php get_template_part( 'breadcrumb' ); ?>
+                        <!-- Social Media Sharing-->
                             <div class="bt-archive-social-media">
-
                                 <div id="fb-root"></div>
                                 <script>(function (d, s, id) {
                                         var js, fjs = d.getElementsByTagName(s)[0];
@@ -75,22 +75,22 @@ get_header();
                                      data-layout="button_count" tabindex="0"></div>
 
                                 <span tabindex="0">
-                                <a href="https://twitter.com/share" class="twitter-share-button"
-                                   data-url="change to the url of the page here"
-                                   data-via="UKNatArchives">Tweet</a>
-                           <script>!function (d, s, id) {
-                                   var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-                                   if (!d.getElementById(id)) {
-                                       js = d.createElement(s);
-                                       js.id = id;
-                                       js.src = p + '://platform.twitter.com/widgets.js';
-                                       fjs.parentNode.insertBefore(js, fjs);
-                                   }
-                               }(document, 'script', 'twitter-wjs');
-                           </script>
-                        </span>
+                                    <a href="https://twitter.com/share" class="twitter-share-button"
+                                       data-url="change to the url of the page here"
+                                       data-via="UKNatArchives">Tweet</a>
+                                    <script>!function (d, s, id) {
+                                           var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                                           if (!d.getElementById(id)) {
+                                               js = d.createElement(s);
+                                               js.id = id;
+                                               js.src = p + '://platform.twitter.com/widgets.js';
+                                               fjs.parentNode.insertBefore(js, fjs);
+                                           }
+                                       }(document, 'script', 'twitter-wjs');
+                                    </script>
+                                </span>
                             </div>
-
+                        <!--END Social Media Sharing-->
                             <div class="container-lf">
                                 <div class="intro-text">
                                     <h1 class="intro-heading"><?php the_title(); ?></h1>
