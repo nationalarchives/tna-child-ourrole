@@ -512,7 +512,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
 }
 
 /* Social media */
-.bt-archive-social-media {
+.archive-social-media {
     padding: 5px;
     z-index: 100;
     position: fixed;
@@ -523,7 +523,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
     top: -7px;
 }
 @media (max-width: 768px) {
-    .bt-archive-social-media{
+    .archive-social-media{
         position:relative;
     }
 }
@@ -532,7 +532,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
 and (min-device-width: 768px)
 and (max-device-width: 1024px)
 and (-webkit-min-device-pixel-ratio: 2) {
-    .bt-archive-social-media {
+    .archive-social-media {
         position: relative;
     }
 }

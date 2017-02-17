@@ -60,7 +60,7 @@ get_header();
                              style="background-image: url('<?php echo make_path_relative( $image[0] ); ?>')">
 							<?php get_template_part( 'breadcrumb' ); ?>
                         <!-- Social Media Sharing-->
-                            <div class="bt-archive-social-media">
+                            <div class="archive-social-media">
                                 <div id="fb-root"></div>
                                 <script>(function (d, s, id) {
                                         var js, fjs = d.getElementsByTagName(s)[0];
