@@ -11,7 +11,7 @@ get_header();
         <div id="cd-vertical-nav" role="navigation" class="hidden-xs">
             <ul id="top-menu">
                 <li>
-                    <a href="#<?php echo sanitize_title_with_dashes( get_the_title() ); ?>" class="sub-menu" tabindex="-1">
+                    <a href="#<?php echo sanitize_title_with_dashes( get_the_title() ); ?>" class="cd-menu" tabindex="-1">
                         <span class="cd-dot"></span>
                         <span class="cd-label arrow_box">Introduction</span>
                     </a>
@@ -29,7 +29,7 @@ get_header();
 						$the_query->the_post();
 						?>
                         <li>
-                            <a href="#<?php echo sanitize_title_with_dashes( get_the_title() ); ?>" class="sub-menu" tabindex="-1">
+                            <a href="#<?php echo sanitize_title_with_dashes( get_the_title() ); ?>" class="cd-menu" tabindex="-1">
                                 <span class="cd-dot"></span>
                                 <span class="cd-label arrow_box"><?php the_title(); ?></span>
                             </a>

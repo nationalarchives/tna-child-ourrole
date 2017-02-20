@@ -58,14 +58,14 @@ $(document).ready(function(){
 
             // This is the bit of code that uses the currentSection as its source of ID
             var id = $currentSection.attr("id");
-            $('.sub-menu').removeClass('is-selected');
+            $('.cd-menu').removeClass('is-selected');
             $("[href=#"+id+"]").addClass('is-selected');
         })
 
     });
 
     /*Scroll to script*/
-    $(".sub-menu").click(function(e) {
+    $(".cd-menu").click(function(e) {
         e.preventDefault();
         var link = $(this).attr('href');
         $('html, body').animate({
