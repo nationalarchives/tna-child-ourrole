@@ -20,6 +20,7 @@ function setThemeGlobals($environment = null) {
             $pre_crumbs = array('Our role' => '/');
             break;
         case 'external':
+        case 'aws_public':
             $pre_crumbs = array(
                 'About' => '/about/',
                 'Site home title' => '/about/our-role/'
